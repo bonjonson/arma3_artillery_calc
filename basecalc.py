@@ -8,9 +8,22 @@ class CalculateMethod:
         self.__y = y
         self.__y1 = y1
 
+    def __checkValue(x):
+        '''Приватный метод проверки значений'''
+        if isinstance(x, int) or isinstance(x, float):
+            return True
+        return False
 
-    def __checkValue():
+    def setCoords(self, x, x1, y, y1):
+        if CalculateMethod.__checkValue(x) and CalculateMethod.__checkValue(x1) and CalculateMethod.__checkValue(y) \
+                and CalculateMethod.__checkValue(y1):
+            self.__x = x
+            self.__x1 = x1
+            self.__y = y
+            self.__y1 = y1
 
+    def getCoords(self):
+        return self.__x, self.__x1, self.__y, self.__y1
 
     def get_target_distance(self):
         '''Метод вычисления и округления дистанции до цели'''
@@ -30,7 +43,8 @@ class CalculateMethod:
     def get_target_angle(self):
         '''Метод нахождения угла наведения на цель'''
 
-        alpha_angle = asin((self.__x1 - self.__x) / sqrt(pow(self.__x1 - self.__x, 2) + pow(self.__y1 - self.__y, 2))) * 1018.591636
+        alpha_angle = asin(
+            (self.__x1 - self.__x) / sqrt(pow(self.__x1 - self.__x, 2) + pow(self.__y1 - self.__y, 2))) * 1018.591636
         if self.__x < self.__x1 and self.__y < self.__y1:
             target_angle = 0 + abs(alpha_angle)
         elif self.__x < self.__x1 and self.__y > self.__y1:
