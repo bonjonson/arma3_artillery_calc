@@ -1,8 +1,8 @@
 '''
 Конвертация csv-файла в структуру данных со вложенными словарями. CSV-файл с разделителем ";"
 '''
-g = open('data_csv.csv', 'r')
-f = open('converted_data.txt', 'a')
+g = open('mortar.csv', 'r')
+f = open('mortar.txt', 'a')
 for l in g:
     l = "'" + l.rstrip() + "],"
     l = l.replace(";", ":")

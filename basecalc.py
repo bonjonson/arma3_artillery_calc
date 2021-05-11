@@ -1,4 +1,5 @@
 from math import sqrt, asin, pow
+import mortars_data
 
 
 class CalculateMethod:
@@ -9,7 +10,7 @@ class CalculateMethod:
         self.__y1 = y1
 
     def __checkValue(x):
-        '''Приватный метод проверки значений'''
+        """Приватный метод проверки значений"""
         if isinstance(x, int) or isinstance(x, float):
             return True
         return False
@@ -26,7 +27,7 @@ class CalculateMethod:
         return self.__x, self.__x1, self.__y, self.__y1
 
     def get_target_distance(self):
-        '''Метод вычисления и округления дистанции до цели'''
+        """Метод вычисления и округления дистанции до цели"""
         target_distance = sqrt(pow(self.__x1 - self.__x, 2) + pow(self.__y1 - self.__y, 2))
 
         if 100 <= target_distance <= 9999:
@@ -37,12 +38,11 @@ class CalculateMethod:
             else:
                 target_distance = target_distance - (target_distance % 100) + 100
         else:
-            print('value is our of target_distance')
+            print('value is out of target distance')
         return target_distance
 
     def get_target_angle(self):
-        '''Метод нахождения угла наведения на цель'''
-
+        """Метод нахождения угла наведения на цель"""
         alpha_angle = asin(
             (self.__x1 - self.__x) / sqrt(pow(self.__x1 - self.__x, 2) + pow(self.__y1 - self.__y, 2))) * 1018.591636
         if self.__x < self.__x1 and self.__y < self.__y1:
@@ -56,9 +56,9 @@ class CalculateMethod:
         return target_angle
 
     def get_table_elev(self):
-        '''Метод поиска табличного значения elevation'''
+        """Метод поиска табличного значения elevation"""
         pass
 
     def get_correct_elev(self):
-        '''Метод определения корректного elevation'''
+        """Метод определения корректного elevation"""
         pass
