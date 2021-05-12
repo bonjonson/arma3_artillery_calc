@@ -1,8 +1,6 @@
 from math import sqrt, asin, pow
 import mortars_data
 
-type_of_mortar = 'mortar_2b11'
-
 
 class CalculateMethod:
     def __init__(self, mortar_x, target_x1, mortar_y, target_y1, mortar_z, target_z1, type_of_mortar):
@@ -92,7 +90,8 @@ class CalculateMethod:
         иначе возвращаем недопустимое значение distance.
         """
         try:
-            if self.__type_of_mortar in mortars_data:
+            # Проверяем наличие выбранного type of mortar в модуле mortars_data
+            if self.__type_of_mortar in mortars_data.mortars:
                 for _keys in self.__type_of_mortar.keys():
                     try:
                         if self.getTargetDistance() in self.__type_of_mortar.get(_keys).keys():
