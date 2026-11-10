@@ -1,0 +1,11 @@
+{
+  "name": "Arma 3 Artillery Calculator",
+  "short_name": "ArmaCalc",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#14171a",
+  "theme_color": "#14171a",
+  "icons": [
+    {"src": "/static/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"}
+  ]
+}
